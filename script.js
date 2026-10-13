@@ -17,15 +17,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     envelopeScreen.classList.add("opening");
 
-    window.setTimeout(() => {
-      envelopeScreen.classList.add("is-opening");
-      invitation.classList.remove("is-hidden");
-      envelopeScreen.setAttribute("aria-hidden", "true");
+    
+window.setTimeout(() => {
+  // Primero termina de abrirse y comienza a desaparecer el sobre.
+  envelopeScreen.classList.add("is-opening");
+  envelopeScreen.setAttribute("aria-hidden", "true");
 
-      window.setTimeout(() => {
-        envelopeScreen.hidden = true;
-      }, 900);
-    }, 1050);
+  // Espera a que termine la transición antes de mostrar la invitación.
+  window.setTimeout(() => {
+    envelopeScreen.hidden = true;
+    invitation.classList.remove("is-hidden");
+  }, 850);
+
+}, 1150);
+
   }
 
   if (openButton) {
