@@ -264,3 +264,76 @@ h2 { font: 400 clamp(2.3rem, 6vw, 3.8rem)/1.05 var(--serif); color: var(--wine);
     transition-duration: .01ms;
   }
 }
+
+/* Corrección de capas del sobre y tarjeta */
+.envelope-scene {
+  position: relative;
+  isolation: isolate;
+}
+
+.envelope-copy {
+  position: relative;
+  z-index: 5;
+}
+
+.envelope-button {
+  position: relative;
+  isolation: isolate;
+  z-index: 1;
+  overflow: visible;
+}
+
+/* La tarjeta empieza oculta detrás del frente del sobre */
+.envelope-button .letter {
+  position: absolute;
+  z-index: 1;
+  left: 8%;
+  right: 8%;
+  top: 30px;
+  opacity: 0;
+  transform: translateY(0);
+  transition:
+    transform 0.9s ease,
+    top 0.9s ease,
+    opacity 0.35s ease;
+}
+
+/* Frente del sobre por encima de la tarjeta cerrada */
+.envelope-button .envelope-pocket {
+  position: absolute;
+  z-index: 3;
+}
+
+/* La solapa queda por encima cuando está cerrado */
+.envelope-button .envelope-flap {
+  position: absolute;
+  z-index: 4;
+  transform-origin: top center;
+  transition: transform 0.8s ease;
+}
+
+/* Sello encima del sobre */
+.envelope-button .wax-seal {
+  position: absolute;
+  z-index: 5;
+}
+
+/* Al abrir, la tarjeta sube y se hace visible */
+.envelope-screen.opening .envelope-button .letter {
+  opacity: 1;
+  top: -125px;
+  transform: translateY(0);
+  z-index: 2;
+}
+
+/* La solapa se levanta */
+.envelope-screen.opening .envelope-button .envelope-flap {
+  transform: rotateX(180deg);
+  z-index: 0;
+}
+
+/* El sello desaparece durante la apertura */
+.envelope-screen.opening .envelope-button .wax-seal {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
