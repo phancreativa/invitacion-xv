@@ -137,3 +137,130 @@ h2 { font: 400 clamp(2.3rem, 6vw, 3.8rem)/1.05 var(--serif); color: var(--wine);
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+/* SOBRE MÁS REALISTA: capas, pliegues y volumen */
+.envelope-button {
+  isolation: isolate;
+  overflow: visible;
+  transform-style: preserve-3d;
+  filter: drop-shadow(0 16px 18px rgba(105, 63, 67, 0.12));
+}
+
+/* Interior y parte trasera del sobre */
+.envelope-back {
+  inset: 25px 0 0;
+  z-index: 0;
+  border: 1px solid #cda0a0;
+  border-radius: 2px;
+  background: linear-gradient(145deg, #e8c1c1, #d6a4aa);
+  box-shadow:
+    inset 0 1px 2px rgba(255,255,255,.6),
+    0 8px 18px rgba(126,76,89,.10);
+}
+
+/* Tarjeta: queda dentro del sobre hasta abrirlo */
+.letter {
+  z-index: 1;
+  top: 34px;
+  left: 7%;
+  right: 7%;
+  height: 165px;
+  background: #fffaf4;
+  box-shadow: 0 2px 8px rgba(80, 50, 45, .10);
+  transition:
+    transform 1s cubic-bezier(.2,.75,.2,1),
+    top 1s cubic-bezier(.2,.75,.2,1);
+}
+
+/* Bolsillo delantero con pliegues diagonales */
+.envelope-pocket {
+  z-index: 3;
+  inset: 25px 0 0;
+  border: 0;
+  background:
+    linear-gradient(
+      145deg,
+      transparent 49.7%,
+      rgba(181, 126, 133, .20) 50%,
+      transparent 50.7%
+    ),
+    linear-gradient(
+      35deg,
+      #f3d8d4 0%,
+      #f3d8d4 49.5%,
+      #e7c0c1 50%,
+      #e7c0c1 100%
+    );
+  clip-path: polygon(
+    0 0,
+    50% 53%,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+  filter: drop-shadow(0 -1px 1px rgba(255,255,255,.7));
+}
+
+/* Solapa triangular superior */
+.envelope-flap {
+  z-index: 4;
+  top: 25px;
+  left: 0;
+  right: 0;
+  height: 122px;
+  background: linear-gradient(
+    160deg,
+    #f8e5df 0%,
+    #edcecb 52%,
+    #dfb4b8 100%
+  );
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: top center;
+  backface-visibility: visible;
+  filter: drop-shadow(0 3px 2px rgba(120, 72, 79, .18));
+  transition: transform .8s ease;
+}
+
+/* Sello de lacre dorado */
+.wax-seal {
+  z-index: 6;
+  top: 104px;
+  width: 44px;
+  height: 44px;
+  border: 2px solid #f5e2b4;
+  outline: 1px solid rgba(159, 116, 55, .5);
+  outline-offset: 2px;
+  background: radial-gradient(
+    circle at 32% 27%,
+    #e5ca83,
+    #bd9146 58%,
+    #94682f 100%
+  );
+  box-shadow:
+    inset 0 1px 3px rgba(255,255,255,.45),
+    0 3px 6px rgba(91, 57, 29, .25);
+}
+
+/* Animación al abrir */
+.envelope-screen.opening .envelope-flap {
+  transform: rotateX(180deg);
+  z-index: 0;
+}
+
+.envelope-screen.opening .letter {
+  transform: translateY(-105px);
+  z-index: 6;
+}
+
+.envelope-screen.opening .envelope-pocket {
+  z-index: 3;
+}
+
+/* Accesibilidad: reduce movimiento si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+  .envelope-flap,
+  .letter,
+  .wax-seal {
+    transition-duration: .01ms;
+  }
+}
