@@ -346,3 +346,42 @@ h2 { font: 400 clamp(2.3rem, 6vw, 3.8rem)/1.05 var(--serif); color: var(--wine);
     transition-duration: 0.01ms;
   }
 }
+
+/* El sobre crece y queda centrado al abrirse */
+.envelope-screen.opening .envelope-button {
+  position: relative;
+  z-index: 20;
+  transform: translateY(-5px) scale(1.22);
+  transform-origin: center center;
+  transition:
+    transform 0.9s cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+/* Mantener el sobre centrado en la escena */
+.envelope-screen.opening .envelope-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Dar espacio para que el sobre ampliado no se corte */
+.envelope-screen.opening .envelope-button {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* La tarjeta sale más arriba al abrirse */
+.envelope-screen.opening .envelope-button .letter {
+  top: -65px !important;
+  transition:
+    top 0.9s cubic-bezier(0.2, 0.75, 0.25, 1),
+    opacity 0.45s ease;
+}
+
+/* En pantallas pequeñas, ampliarlo un poco menos */
+@media (max-width: 600px) {
+  .envelope-screen.opening .envelope-button {
+    transform: translateY(-5px) scale(1.08);
+  }
+}
