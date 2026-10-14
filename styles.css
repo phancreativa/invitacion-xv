@@ -347,41 +347,26 @@ h2 { font: 400 clamp(2.3rem, 6vw, 3.8rem)/1.05 var(--serif); color: var(--wine);
   }
 }
 
-/* El sobre crece y queda centrado al abrirse */
+
+/* Centrar el sobre y la tarjeta al abrir */
 .envelope-screen.opening .envelope-button {
   position: relative;
-  z-index: 20;
-  transform: translateY(-5px) scale(1.22);
-  transform-origin: center center;
-  transition:
-    transform 0.9s cubic-bezier(0.2, 0.75, 0.25, 1);
-}
-
-/* Mantener el sobre centrado en la escena */
-.envelope-screen.opening .envelope-scene {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Dar espacio para que el sobre ampliado no se corte */
-.envelope-screen.opening .envelope-button {
+  left: auto;
+  right: auto;
   margin-left: auto;
   margin-right: auto;
+  transform: translateY(-5px);
+  transform-origin: center center;
+  z-index: 20;
+  transition: transform 0.9s cubic-bezier(0.2, 0.75, 0.25, 1);
 }
 
-/* La tarjeta sale más arriba al abrirse */
+/* Mantener el tamaño original del sobre */
+.envelope-screen.opening .envelope-button {
+  scale: 1;
+}
+
+/* La tarjeta sale desde dentro del sobre */
 .envelope-screen.opening .envelope-button .letter {
   top: -75px !important;
-  transition:
-    top 0.9s cubic-bezier(0.2, 0.75, 0.25, 1),
-    opacity 0.45s ease;
-}
-
-/* En pantallas pequeñas, ampliarlo un poco menos */
-@media (max-width: 600px) {
-  .envelope-screen.opening .envelope-button {
-    transform: translateY(-5px) scale(1.08);
-  }
 }
