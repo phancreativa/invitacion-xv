@@ -370,3 +370,51 @@ h2 { font: 400 clamp(2.3rem, 6vw, 3.8rem)/1.05 var(--serif); color: var(--wine);
 .envelope-screen.opening .envelope-button .letter {
   top: -75px !important;
 }
+
+/* Al abrir: centrar el sobre y la tarjeta dentro del marco */
+.envelope-screen.opening .envelope-scene {
+  position: relative;
+  height: min(610px, calc(100svh - 56px));
+  min-height: 340px;
+  padding: 0;
+  display: block;
+}
+
+/* El texto deja libre el espacio central */
+.envelope-screen.opening .envelope-copy {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Centrar el sobre en ambos ejes del marco */
+.envelope-screen.opening .envelope-button {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(330px, calc(100% - 36px));
+  height: 220px;
+  margin: 0;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  z-index: 20;
+}
+
+/* Mantener el mismo centrado en móviles */
+@media (max-width: 600px) {
+  .envelope-screen.opening .envelope-button {
+    width: min(300px, calc(100% - 30px));
+    height: 205px;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Ocultar las instrucciones durante la animación */
+.envelope-screen.opening .open-label,
+.envelope-screen.opening .audio-note {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s ease;
+}
