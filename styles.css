@@ -642,3 +642,61 @@ h2 { font: 400 clamp(2.3rem, 6vw, 3.8rem)/1.05 var(--serif); color: var(--wine);
     font-size: .65rem;
   }
 }
+```css
+/* PORTADA MÁS GRANDE EN CELULARES */
+@media (max-width: 600px) {
+  .envelope-screen {
+    padding: 14px 10px !important;
+  }
+
+  .envelope-scene {
+    width: 100% !important;
+    max-width: 520px !important;
+    padding: 30px 14px 16px !important;
+  }
+
+  .envelope-copy h1 {
+    font-size: clamp(2.5rem, 9vw, 3.2rem) !important;
+    line-height: 1;
+  }
+
+  .envelope-for {
+    font-size: 0.85rem !important;
+  }
+
+  .envelope-name {
+    font-size: 1.9rem !important;
+  }
+
+  .envelope-button {
+    width: min(100%, 360px) !important;
+    max-width: none !important;
+    height: 235px !important;
+    margin-top: 18px;
+  }
+
+  .envelope-back,
+  .envelope-pocket {
+    inset: 25px 0 0;
+  }
+
+  .envelope-flap {
+    height: 130px;
+  }
+
+  .wax-seal {
+    top: 110px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .open-label {
+    font-size: 0.68rem;
+    padding: 12px 16px;
+    margin-top: 12px;
+  }
+
+  .envelope-screen .flower-bottom {
+    width: min(48vw, 250px);
+  }
+}
