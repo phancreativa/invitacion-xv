@@ -291,3 +291,58 @@ h2 { font: 400 clamp(2.3rem, 6vw, 3.8rem)/1.05 var(--serif); color: var(--wine);
 .envelope-screen .envelope-button .letter {
   pointer-events: none;
 }
+
+/* Transición elegante al abrir el sobre */
+.envelope-screen .envelope-copy {
+  position: relative;
+  z-index: 10;
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.55s ease,
+    transform 0.65s ease,
+    visibility 0s linear 0s;
+}
+
+/* El sobre pasa al frente y sube ligeramente */
+.envelope-screen .envelope-button {
+  position: relative;
+  z-index: 20;
+  transform: translateY(0);
+  transition: transform 0.8s cubic-bezier(0.22, 0.8, 0.25, 1);
+}
+
+/* Al abrir: desaparecen los textos de bienvenida */
+.envelope-screen.opening .envelope-copy {
+  opacity: 0;
+  transform: translateY(-14px);
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 0;
+  transition:
+    opacity 0.45s ease,
+    transform 0.55s ease,
+    visibility 0s linear 0.55s;
+}
+
+/* Pequeño movimiento ascendente del sobre */
+.envelope-screen.opening .envelope-button {
+  transform: translateY(-22px);
+  z-index: 20;
+}
+
+/* Mantener el sobre por delante de los textos durante la apertura */
+.envelope-screen.opening .envelope-back,
+.envelope-screen.opening .envelope-pocket,
+.envelope-screen.opening .envelope-flap,
+.envelope-screen.opening .wax-seal {
+  pointer-events: none;
+}
+
+/* Respetar la preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  .envelope-screen .envelope-copy,
+  .envelope-screen .envelope-button {
+    transition-duration: 0.01ms;
+  }
+}
