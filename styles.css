@@ -594,3 +594,51 @@ h2 { font: 400 clamp(2.3rem, 6vw, 3.8rem)/1.05 var(--serif); color: var(--wine);
     bottom: 0;
   }
 }
+/* AJUSTE PARA CELULARES: hacer más protagonista la bienvenida */
+@media (max-width: 600px) {
+  .hero {
+    min-height: 100svh;
+    padding: 90px 20px 65px;
+    justify-content: center;
+  }
+
+  .hero-pretitle {
+    font-size: 1.65rem;
+    margin-top: 20px;
+  }
+
+  .hero-name {
+    font-size: clamp(4.5rem, 19vw, 6rem);
+    line-height: 1;
+    margin: 20px 0 24px;
+  }
+
+  .hero-name span {
+    font-size: clamp(1.2rem, 5vw, 1.5rem);
+    letter-spacing: .12em;
+    line-height: 1.5;
+    margin-top: 20px;
+  }
+
+  .hero-message {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    max-width: 350px;
+    margin-bottom: 28px;
+  }
+
+  .hero-date-frame {
+    gap: 10px;
+    padding: 12px 14px;
+    font-size: .62rem;
+  }
+
+  .hero-date-frame strong {
+    font-size: 2.3rem;
+  }
+
+  .scroll-cue {
+    margin-top: 32px;
+    font-size: .65rem;
+  }
+}
