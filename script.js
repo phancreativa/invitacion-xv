@@ -75,11 +75,7 @@ function updateCountdown() {
 updateCountdown();
 window.setInterval(updateCountdown, 1000);
 
-function mapsUrl(location) {
-  return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(location);
-}
-document.getElementById("ceremonyMap").href = mapsUrl(CEREMONY_LOCATION);
-document.getElementById("receptionMap").href = mapsUrl(RECEPTION_LOCATION);
+
 
 const rsvpMessage = "¡Hola! Confirmo mi asistencia a los XV años de Keyla Chávez Ventura el 5 de diciembre de 2026. Mi nombre es: ";
 document.getElementById("rsvpButton").href =
