@@ -373,7 +373,7 @@ h2 { font: 400 clamp(2.3rem, 6vw, 3.8rem)/1.05 var(--serif); color: var(--wine);
 
 /* La tarjeta sale más arriba al abrirse */
 .envelope-screen.opening .envelope-button .letter {
-  top: -105px !important;
+  top: -75px !important;
   transition:
     top 0.9s cubic-bezier(0.2, 0.75, 0.25, 1),
     opacity 0.45s ease;
