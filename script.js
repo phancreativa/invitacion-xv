@@ -4,7 +4,7 @@ const EVENT_DATE = "2026-12-05T18:00:00";
 
 // Reemplaza con el teléfono de WhatsApp con código de país, solo números.
 // Ejemplo de México: 525512345678. Este número es solo un marcador.
-const WHATSAPP_NUMBER = "525500000000";
+const WHATSAPP_NUMBER = "527472546662";
 
 // Sustituye estas direcciones por los nombres o direcciones reales de las sedes.
 const CEREMONY_LOCATION = "Dirección de la ceremonia por confirmar";
