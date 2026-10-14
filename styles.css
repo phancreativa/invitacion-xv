@@ -700,3 +700,80 @@ h2 { font: 400 clamp(2.3rem, 6vw, 3.8rem)/1.05 var(--serif); color: var(--wine);
     width: min(48vw, 250px);
   }
 }
+
+```css
+/* MAPAS DE LA INVITACIÓN */
+.maps-section {
+  padding-block: 55px 85px;
+}
+
+.maps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.map-card {
+  min-width: 0;
+  text-align: center;
+  padding: 24px 18px;
+  background: rgba(255, 250, 245, .82);
+  border: 1px solid rgba(185, 154, 104, .65);
+  outline: 1px solid rgba(185, 154, 104, .2);
+  outline-offset: 4px;
+}
+
+.map-card h3 {
+  font: 500 1.65rem/1.2 var(--serif);
+  color: var(--wine);
+  margin: 8px 0 18px;
+}
+
+.map-card iframe {
+  display: block;
+  width: 100%;
+  height: 280px;
+  border: 1px solid var(--gold-light);
+  border-radius: 3px;
+  margin-bottom: 18px;
+}
+
+.map-card .map-button {
+  max-width: 100%;
+}
+
+.map-route {
+  grid-column: 1 / -1;
+}
+
+.map-route iframe {
+  height: 350px;
+}
+
+@media (max-width: 600px) {
+  .maps-section {
+    padding-block: 45px 60px;
+  }
+
+  .maps-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .map-route {
+    grid-column: auto;
+  }
+
+  .map-card {
+    padding: 22px 14px;
+  }
+
+  .map-card iframe {
+    height: 260px;
+  }
+
+  .map-route iframe {
+    height: 300px;
+  }
+}
+
