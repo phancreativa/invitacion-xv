@@ -732,11 +732,6 @@ h2 { font: 400 clamp(2.3rem, 6vw, 3.8rem)/1.05 var(--serif); color: var(--wine);
   transform: scale(-1);
 }
 
-/* El contenido queda por delante de las flores */
-.hero > :not(.hero-flower) {
-  position: relative;
-  z-index: 1;
-}
 
 /* Flores más pequeñas en celulares */
 @media (max-width: 600px) {
