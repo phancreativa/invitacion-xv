@@ -750,3 +750,8 @@ h2 { font: 400 clamp(2.3rem, 6vw, 3.8rem)/1.05 var(--serif); color: var(--wine);
     bottom: 15px;
   }
 }
+/* Ocultar adornos tipográficos originales */
+.hero .corner-ornament,
+.hero .hero-botanical {
+  display: none !important;
+}
