@@ -695,61 +695,42 @@ h2 { font: 400 clamp(2.3rem, 6vw, 3.8rem)/1.05 var(--serif); color: var(--wine);
   .route-map-preview img { width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; }
 }
 @media (prefers-reduced-motion: reduce) { .route-map-preview img { transition-duration: .01ms; } }
-/* Flores en las cuatro esquinas de la portada */
-.hero-flower {
-  position: absolute;
-  width: clamp(75px, 12vw, 150px);
-  height: auto;
-  z-index: 0;
-  opacity: 0.85;
-  pointer-events: none;
+.portada {
+  position: relative;
+  overflow: hidden;
 }
 
-/* Esquina superior izquierda */
-.flower-top-left {
-  top: 35px;
+.flor-esquina {
+  position: absolute;
+  width: clamp(90px, 15%, 200px);
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.flor-superior-izquierda {
+  top: 12px;
   left: 12px;
 }
 
-/* Esquina superior derecha */
-.flower-top-right {
-  top: 35px;
+.flor-superior-derecha {
+  top: 12px;
   right: 12px;
   transform: scaleX(-1);
 }
 
-/* Esquina inferior izquierda */
-.flower-bottom-left {
-  bottom: 25px;
+.flor-inferior-izquierda {
+  bottom: 12px;
   left: 12px;
   transform: scaleY(-1);
 }
 
-/* Esquina inferior derecha */
-.flower-bottom-right {
-  bottom: 25px;
+.flor-inferior-derecha {
+  bottom: 12px;
   right: 12px;
   transform: scale(-1);
 }
 
-
-/* Flores más pequeñas en celulares */
-@media (max-width: 600px) {
-  .hero-flower {
-    width: clamp(55px, 19vw, 95px);
-    opacity: 0.7;
-  }
-
-  .flower-top-left,
-  .flower-top-right {
-    top: 25px;
-  }
-
-  .flower-bottom-left,
-  .flower-bottom-right {
-    bottom: 15px;
-  }
-}
 /* Ocultar adornos tipográficos originales */
 .hero .corner-ornament,
 .hero .hero-botanical {
