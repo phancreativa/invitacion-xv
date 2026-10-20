@@ -785,3 +785,39 @@ h2 { font: 400 clamp(2.3rem, 6vw, 3.8rem)/1.05 var(--serif); color: var(--wine);
   height: auto;
   border: 0;
 }
+
+/* Detalles del reproductor de la canción */
+.song-section {
+  color: var(--ink);
+}
+
+.song-section .eyebrow {
+  margin-bottom: 12px;
+}
+
+.song-player {
+  border-radius: 4px;
+  box-shadow: 0 8px 24px rgba(128, 77, 89, 0.08);
+}
+
+.song-note {
+  margin: 16px auto 0;
+  color: var(--muted);
+  font: italic 1rem var(--serif);
+  font-size: 0.9rem;
+  max-width: 480px;
+}
+
+@media (max-width: 600px) {
+  .song-section {
+    padding: 48px 18px;
+  }
+
+  .song-message {
+    font-size: 0.95rem;
+  }
+
+  .song-player {
+    padding: 5px;
+  }
+}
