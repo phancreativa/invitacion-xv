@@ -826,9 +826,9 @@ h2 { font: 400 clamp(2.3rem, 6vw, 3.8rem)/1.05 var(--serif); color: var(--wine);
 /* === Reproductor MP3 personalizado para la canción de Keyla === */
 .music-card { max-width:430px; padding:14px; border-radius:8px; background:linear-gradient(145deg,#fffaf5,#f8eee8); box-shadow:0 14px 34px rgba(128,77,89,.12); }
 .music-cover { min-height:190px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; position:relative; overflow:hidden; border:1px solid rgba(185,154,104,.62); background:radial-gradient(ellipse at 15% 15%,rgba(232,199,199,.42),transparent 42%),radial-gradient(ellipse at 85% 90%,rgba(229,209,168,.36),transparent 40%),#fffaf5; color:var(--wine); }
-.music-cover::before,.music-cover::after { content:"❀"; position:absolute; color:rgba(183,125,134,.28); font-size:4.5rem; }
-.music-cover::before { top:-13px; left:12px; transform:rotate(-25deg); }
-.music-cover::after { right:10px; bottom:-20px; transform:rotate(20deg); }
+
+
+
 .music-flower { color:var(--gold); font-size:1.55rem; line-height:1.1; }
 .music-cover-label { font-size:.56rem; letter-spacing:.22em; }
 .music-cover-name { font:400 3rem/.95 var(--script); color:var(--rose); }
