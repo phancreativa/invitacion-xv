@@ -81,7 +81,7 @@ function mapsUrl(location) {
 document.getElementById("ceremonyMap").href = mapsUrl(CEREMONY_LOCATION);
 document.getElementById("receptionMap").href = mapsUrl(RECEPTION_LOCATION);
 
-const rsvpMessage = "¡Hola! ✨ Me dará mucho gusto acompañar a Keyla♡ en la celebración de sus XV años este 5 de diciembre de 2026. Mi nombre es:  ";
+const rsvpMessage = "¡Hola! Me dará mucho gusto acompañar a Keyla♡ en la celebración de sus XV años este 5 de diciembre de 2026. Mi nombre es:  ";
 document.getElementById("rsvpButton").href =
   "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(rsvpMessage);
 
