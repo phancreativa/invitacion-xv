@@ -1,6 +1,6 @@
 // =================== PERSONALIZA AQUÍ ===================
 // Fecha y hora local del evento. Las 18:00 son provisionales.
-const EVENT_DATE = "2026-12-05T18:00:00";
+const EVENT_DATE = "2026-12-05T14:00:00";
 
 // Reemplaza con el teléfono de WhatsApp con código de país, solo números.
 // Ejemplo de México: 525512345678. Este número es solo un marcador.
